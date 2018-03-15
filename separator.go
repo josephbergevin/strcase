@@ -38,18 +38,21 @@ func toLowerWithSeparator(s, sep string) string {
 	return strings.ToLower(n)
 }
 
+// ToKebab converts a string to kebab-case
 func ToKebab(s string) string {
 	s = strings.TrimSpace(s)
 	r := strings.NewReplacer("_", "-", " ", "-")
 	return toLowerWithSeparator(r.Replace(s), "-")
 }
 
+// ToSentence converts a string to sentence case
 func ToSentence(s string) string {
 	s = strings.TrimSpace(s)
 	r := strings.NewReplacer("_", " ", "-", " ")
 	return toLowerWithSeparator(r.Replace(s), " ")
 }
 
+// ToSnake converts a string to snake_case
 func ToSnake(s string) string {
 	s = strings.TrimSpace(s)
 	r := strings.NewReplacer(" ", "_", "-", "_")
